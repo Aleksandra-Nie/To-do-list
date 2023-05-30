@@ -16,7 +16,7 @@
     render();
   };
 
-  toggleTaskDone = (index) => {
+  const toggleTaskDone = (index) => {
     tasks[index].done = !tasks[index].done;
     render();
   };
@@ -51,7 +51,8 @@
        <span class="list__content ${task.done ? "list__content--done" : ""}">
         ${task.content}
         </span>
-        <button class="list__buttonTask list__buttonTask--remove js-remove">🗑</button>
+        <button class="list__buttonTask list__buttonTask--remove js-remove">🗑
+  </button>
         </li>
         `;
     }
@@ -68,9 +69,10 @@
 
     if (newTaskContent !== "") {
       addNewTask(newTaskContent);
-      newTaskElement.value = "";
-      newTaskElement.focus();
     }
+
+    newTaskElement.value = "";
+    newTaskElement.focus();
   };
 
   const init = () => {
